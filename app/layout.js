@@ -1,3 +1,4 @@
+import MovingTextBackground from './components/backGround'
 import NavBar from './components/navBar'
 import './globals.css'
 
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body>
+        <MovingTextBackground text={'ABOUT'} />
         <NavBar />
         {children}
       </body>
