@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -11,6 +10,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #232323;
+    --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
