@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --background: #ffffff;
@@ -9,7 +10,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #232323;
     --foreground: #ededed;
   }
 }
@@ -17,5 +18,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Space Mono', Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: 'Rubik Broken Fax';
 }
