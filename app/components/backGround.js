@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 
 const MovingTextBackground = ({ word = 'ABOUT' }) => {
-  const textArray = new Array(20).fill(word)
+  const textArray = new Array(30).fill(word)
 
   return (
     <div className='background-container'>
