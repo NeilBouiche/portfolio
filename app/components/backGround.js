@@ -1,54 +1,68 @@
 'use client'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-const MovingTextBackground = ({ word = 'ABOUT' }) => {
-  const textArray = new Array(30).fill(word)
+const MovingTextBackground = ({ word = 'NEIL BOUICHE' }) => {
+  const rowHeight = 58
+  const textArray = new Array(20).fill(word)
+  const [diagonal, setDiagonal] = useState(0)
+
+  useEffect(() => {
+    const calculateDiagonal = () => {
+      const { innerWidth, innerHeight } = window
+      setDiagonal(Math.sqrt(innerWidth ** 2 + innerHeight ** 2))
+    }
+
+    calculateDiagonal()
+    window.addEventListener('resize', calculateDiagonal)
+
+    return () => {
+      window.removeEventListener('resize', calculateDiagonal)
+    }
+  }, [])
+
+  const numberOfRows = Math.ceil(diagonal / rowHeight)
 
   return (
-    <div className='background-container'>
-      {Array.from({ length: 40 }).map((_, rowIndex) => (
-        <motion.div
-          className='text-row'
-          key={rowIndex}
-          initial={{ x: '-100%' }}
-          animate={{ x: '100%' }}
-          transition={{
-            duration: 120,
-            repeat: Infinity,
-          }}>
-          {textArray.map((item, index) => (
-            <span className='word' key={index}>
-              {item}
-            </span>
-          ))}
-        </motion.div>
-      ))}
-
-      <style jsx>{`
-        .background-container {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          background-color: #1a1a1a; /* Dark gray */
-        }
-        .text-row {
-          display: flex;
-          white-space: nowrap;
-          position: absolute;
-          top: calc(20% * var(--row-index)); /* Stack rows evenly */
-          width: 100%;
-        }
-        .word {
-          font-size: 2rem;
-          color: #d4ff00; /* Neon yellow */
-          margin-right: 2rem;
-          font-family: monospace;
-          opacity: 0.1; /* Slight transparency */
-        }
-      `}</style>
+    <div className='absolute top-0 left-0 w-full h-full overflow-hidden bg-[#232323]'>
+      <div
+        className='absolute'
+        style={{
+          width: diagonal,
+          height: diagonal,
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%) rotate(-45deg)',
+        }}>
+        {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
+          <motion.div
+            key={rowIndex}
+            className='flex absolute w-full whitespace-nowrap'
+            style={{ top: `${(rowIndex * 100) / numberOfRows}%` }}
+            initial={{ x: '-100%' }}
+            animate={{ x: '0%' }}
+            transition={{
+              duration: 90,
+              ease: 'linear',
+              repeat: Infinity,
+            }}>
+            {textArray.map((item, index) => (
+              <span
+                key={index}
+                className='text-2xl font-mono text-white opacity-10 mr-8'>
+                {item}
+              </span>
+            ))}
+            {textArray.map((item, index) => (
+              <span
+                key={`duplicate-${index}`}
+                className='text-2xl font-mono text-white opacity-10 mr-8'>
+                {item}
+              </span>
+            ))}
+          </motion.div>
+        ))}
+      </div>
     </div>
   )
 }

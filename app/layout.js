@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body>
-        <MovingTextBackground text={'ABOUT'} />
+        <MovingTextBackground word={'ABOUT'} />
         <NavBar />
         {children}
       </body>

@@ -24,3 +24,6 @@ body {
 h1 {
   font-family: 'Rubik Broken Fax';
 }
+.rotate-center {
+  @apply origin-center;
+}
