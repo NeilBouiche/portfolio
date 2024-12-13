@@ -6,7 +6,7 @@ import icon from '@/app/assets/icon.png'
 const NavBar = () => {
   return (
     <nav className='text-white container sticky mx-auto my-8 py-3 px-6 flex items-center justify-between rounded-full bg-white/20 shadow-lg ring-1 ring-black/5 backdrop-blur lg:px-10'>
-      <div className='font-bold text-xl sm:text-2xl'>
+      <div className='text-xl sm:text-2xl'>
         <Link href='/'>
           <Image
             src={icon}

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,16 +14,52 @@
     --foreground: #ededed;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html,
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Space Mono', Helvetica, sans-serif;
 }
 
-h1 {
-  font-family: 'Rubik Broken Fax';
+.title-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
+.title-container h1 {
+  position: relative;
+  font-family: 'Climate Crisis', sans-serif;
+  font-size: clamp(2rem, 10vh, 10rem);
+  line-height: 0.85;
+  color: #ccff00;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
 .rotate-center {
   @apply origin-center;
+}
+
+@media (max-width: 768px) {
+  .title-container {
+    position: static;
+    padding-top: 20px;
+  }
+
+  .title-container h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
 }

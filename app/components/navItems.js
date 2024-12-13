@@ -16,7 +16,7 @@ export default function NavItems() {
         <li key={link.href}>
           <Link
             href={link.href}
-            className={`text-sm sm:text-xl font-medium ${
+            className={`text-sm sm:text-xl font-medium nav-items ${
               pathname === link.href ? 'text-[#CCFF00]' : 'text-white'
             } hover:text-neon-green`}>
             {link.label}
