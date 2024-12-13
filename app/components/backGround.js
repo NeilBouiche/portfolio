@@ -1,10 +1,14 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
-const MovingTextBackground = ({ word = 'NEIL BOUICHE' }) => {
+const MovingTextBackground = () => {
+  const path = usePathname()
+  const word = path.match(/^\/(\w+)/)?.[1] || 'ABOUT'
+
   const rowHeight = 58
-  const textArray = new Array(20).fill(word)
+  const textArray = new Array(20).fill(word.toUpperCase())
   const [diagonal, setDiagonal] = useState(0)
 
   useEffect(() => {
@@ -24,7 +28,7 @@ const MovingTextBackground = ({ word = 'NEIL BOUICHE' }) => {
   const numberOfRows = Math.ceil(diagonal / rowHeight)
 
   return (
-    <div className='absolute top-0 left-0 w-full h-full overflow-hidden bg-[#232323]'>
+    <div className='absolute top-0 left-0 w-full h-full overflow-hidden bg-[#232323] z-0'>
       <div
         className='absolute'
         style={{

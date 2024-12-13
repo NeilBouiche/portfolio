@@ -24,6 +24,8 @@ html,
 body {
   color: var(--foreground);
   background: var(--background);
+  -webkit-user-select: none;
+  user-select: none;
   font-family: 'Space Mono', Helvetica, sans-serif;
 }
 
@@ -40,11 +42,12 @@ body {
 .title-container h1 {
   position: relative;
   font-family: 'Climate Crisis', sans-serif;
-  font-size: clamp(2rem, 10vh, 10rem);
+  font-size: clamp(2rem, 13vh, 15rem);
   line-height: 0.85;
   color: #ccff00;
   writing-mode: vertical-lr;
-  transform: rotate(180deg);
+  transform: rotate(360deg);
+  text-transform: uppercase;
 }
 
 .rotate-center {

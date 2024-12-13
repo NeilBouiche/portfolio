@@ -1,6 +1,8 @@
 import MovingTextBackground from './components/backGround'
+import Content from './components/content'
 import NavBar from './components/navBar'
 import Title from './components/title'
+
 import './globals.css'
 
 export const metadata = {
@@ -22,9 +24,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <MovingTextBackground word={'ABOUT'} />
-        <NavBar />
-        <Title title={'CONTACT'} />
+        <MovingTextBackground />
+        <div className='sm:mx-[5rem] md:mx-[10rem] lg:mx-[15rem] mx-5'>
+          <NavBar />
+          <Content />
+        </div>
+        <Title />
         {children}
       </body>
     </html>
