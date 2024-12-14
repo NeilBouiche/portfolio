@@ -1,25 +1,21 @@
-import face from '@/app/assets/icon.png'
-import Image from 'next/image'
+'use client'
+import { motion } from 'framer-motion'
 
-const Content = () => {
+const Content = ({ children }) => {
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 2, type: 'spring' } },
+  }
   return (
-    <div className='fixed flex flex-col text-2xl text-center text-white rounded-none max-w-[985px] shadow-[14px_12px_0px_rgba(204,255,0,1)]'>
-      <div className='flex flex-col px-20 pt-16 pb-40 w-full bg-neutral-800 rounded-[40px] max-md:px-5 max-md:pb-24 max-md:max-w-full'>
-        <Image
-          loading='lazy'
-          src={face}
-          alt='illustration of myself'
-          className='object-contain self-center max-w-full aspect-[1.21] w-[134px]'
-        />
-        <div className='mt-16 mb-0 max-md:mt-10 max-md:mb-2.5 max-md:max-w-full'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          laoreet diam congue fringilla facilisis. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Proin commodo libero a arcu ultricies, eu
-          mollis nulla tincidunt. In mollis accumsan nulla, vel congue dolor
-          porta sed.
-        </div>
+    <motion.div
+      initial='hidden'
+      animate='visible'
+      variants={variants}
+      className='relative flex container mx-auto mt-12 md:mt-32 rounded-[40px] shadow-[14px_12px_0px_rgba(204,255,0,1)]'>
+      <div className='bg-neutral-800 rounded-[40px] px-6 py-12 md:px-20 md:py-16 flex flex-col justify-center md:items-start gap-12'>
+        {children}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

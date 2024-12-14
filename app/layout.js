@@ -27,9 +27,8 @@ export default function RootLayout({ children }) {
         <MovingTextBackground />
         <div className='sm:mx-[5rem] md:mx-[10rem] lg:mx-[15rem] mx-5'>
           <NavBar />
-          <Content />
+          <Title />
         </div>
-        <Title />
         {children}
       </body>
     </html>

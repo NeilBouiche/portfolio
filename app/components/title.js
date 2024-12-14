@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react'
 
 const Title = () => {
   const path = usePathname()
-  const title = path.match(/^\/(\w+)/)?.[1] || 'ABOUT'
+  const title = path.match(/^\/(\w+)/)?.[1] || 'ABOUT/ME'
 
   const controls = useAnimation()
-  const [displayedTitle, setDisplayedTitle] = useState('ABOUT')
+  const [displayedTitle, setDisplayedTitle] = useState('ABOUT/ME')
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -25,7 +25,7 @@ const Title = () => {
         controls.start({
           opacity: 1,
           x: 0,
-          transition: { duration: 0.4 },
+          transition: { duration: 0.4, type: 'spring' },
         })
       })
 
