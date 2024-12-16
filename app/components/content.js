@@ -21,5 +21,6 @@ const Content = ({ children }) => {
 
 export default Content
 
-// Construire contact
+// About me
+// Réparer Sportsee mettre photos sur
 // polish et vérifications

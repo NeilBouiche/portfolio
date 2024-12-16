@@ -14,11 +14,11 @@ export default function Home() {
           className=' self-center w-20 md:w-40 md:mr-8'
         />
         <div className='text-sm md:text-lg text-center '>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          laoreet diam congue fringilla facilisis. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Proin commodo libero a arcu ultricies, eu
-          mollis nulla tincidunt. In mollis accumsan nulla, vel congue dolor
-          porta sed.
+          Dynamic and passionate web developer, proficient in the latest
+          technologies, including JavaScript with React for front-end and
+          Next.js for back-end development. Recently graduated, I am actively
+          seeking an opportunity to apply my technical and creative skills in an
+          innovative environment.
         </div>
       </Content>
     </div>
