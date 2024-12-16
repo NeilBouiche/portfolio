@@ -5,7 +5,7 @@ import face from '@/app/assets/icon.png'
 
 export default function Home() {
   return (
-    <div className='sm:mx-[5rem] md:mx-[10rem] lg:mx-[15rem] mx-5'>
+    <section className='sm:mx-[5rem] md:mx-[10rem] lg:mx-[15rem] mx-5'>
       <Content>
         <Image
           loading='lazy'
@@ -21,6 +21,6 @@ export default function Home() {
           porta sed.
         </div>
       </Content>
-    </div>
+    </section>
   )
 }
