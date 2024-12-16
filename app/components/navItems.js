@@ -7,7 +7,10 @@ export default function NavItems() {
   const navLinks = [
     { href: '/', label: 'about' },
     { href: '/projects', label: 'projects' },
-    { href: '/contact', label: 'contact' },
+    {
+      href: 'mailto:neil.bouiche@gmail.com?subject=Contact%20Form%20Submission',
+      label: 'contact',
+    },
   ]
 
   return (
