@@ -54,7 +54,7 @@ body {
   @apply origin-center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .title-container {
     position: static;
     padding-top: 20px;

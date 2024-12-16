@@ -2,13 +2,12 @@ import Image from 'next/image'
 import Content from './components/content'
 
 import face from '@/app/assets/icon.png'
-import Contact from './components/contact'
 
 export default function Home() {
   return (
     <div className='sm:mx-[5rem] md:mx-[10rem] lg:mx-[15rem] mx-5'>
       <Content>
-        {/* <Image
+        <Image
           loading='lazy'
           src={face}
           alt='illustration of myself'
@@ -20,8 +19,7 @@ export default function Home() {
           consectetur adipiscing elit. Proin commodo libero a arcu ultricies, eu
           mollis nulla tincidunt. In mollis accumsan nulla, vel congue dolor
           porta sed.
-        </div> */}
-        <Contact />
+        </div>
       </Content>
     </div>
   )

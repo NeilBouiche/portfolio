@@ -1,6 +1,7 @@
 import Content from '../components/content'
+import Project from '../components/project'
 
-const Project = () => {
+const Projects = () => {
   return (
     <div className='sm:mx-[5rem] md:mx-[10rem] lg:mx-[15rem] mx-5'>
       <Content>
@@ -10,4 +11,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default Projects

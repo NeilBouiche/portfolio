@@ -9,26 +9,35 @@ const MovingTextBackground = () => {
 
   const rowHeight = 58
   const textArray = new Array(20).fill(word.toUpperCase())
+  const [backgroundHeight, setBackgroundHeight] = useState(0)
   const [diagonal, setDiagonal] = useState(0)
 
   useEffect(() => {
-    const calculateDiagonal = () => {
-      const { innerWidth, innerHeight } = window
-      setDiagonal(Math.sqrt(innerWidth ** 2 + innerHeight ** 2))
+    const calculateDimensions = () => {
+      const width = window.innerWidth
+      const height = Math.max(
+        document.documentElement.scrollHeight,
+        document.documentElement.clientHeight,
+        window.innerHeight
+      )
+      setBackgroundHeight(height)
+      setDiagonal(Math.sqrt(width ** 2 + height ** 2))
     }
 
-    calculateDiagonal()
-    window.addEventListener('resize', calculateDiagonal)
+    calculateDimensions()
+    window.addEventListener('resize', calculateDimensions)
 
     return () => {
-      window.removeEventListener('resize', calculateDiagonal)
+      window.removeEventListener('resize', calculateDimensions)
     }
   }, [])
 
   const numberOfRows = Math.ceil(diagonal / rowHeight)
 
   return (
-    <div className='absolute top-0 left-0 w-full h-full overflow-hidden bg-[#232323] z-0'>
+    <div
+      className='absolute top-0 left-0 w-full overflow-hidden bg-[#232323] z-0'
+      style={{ height: backgroundHeight }}>
       <div
         className='absolute'
         style={{

@@ -11,7 +11,7 @@ const Content = ({ children }) => {
       initial='hidden'
       animate='visible'
       variants={variants}
-      className='relative flex container mx-auto mt-12 lg:mt-32 rounded-[40px] shadow-[14px_12px_0px_rgba(204,255,0,1)]'>
+      className='relative flex container mx-auto mt-12 lg:mt-24 mb-6 lg:mb-10 rounded-[40px] shadow-[14px_12px_0px_rgba(204,255,0,1)]'>
       <div className='bg-neutral-800 rounded-[40px] px-6 py-8 md:px-20 md:py-10 lg:py-16 flex flex-col justify-center md:items-start gap-12'>
         {children}
       </div>
@@ -21,6 +21,5 @@ const Content = ({ children }) => {
 
 export default Content
 
-// Corriger emplacements fonts => voir erreur
-// Construire contact et Responsive
+// Construire contact
 // polish et vérifications

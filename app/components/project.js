@@ -32,19 +32,21 @@ const Project = () => {
   return (
     <div className='flex flex-col gap-6'>
       {projects.map((project) => (
-        <div className='flex gap-6' key={project.src}>
+        <div
+          className='flex flex-col md:flex-row gap-6 items-center md:items-start'
+          key={project.src}>
           <Image
             src={project.img}
             alt={project.alt}
             width={100}
             height={72}
-            className='filter-[#CCFF00]'
+            className='filter-[#CCFF00] w-24 h-auto md:w-28 md:h-auto'
           />
-          <div className='flex flex-col'>
-            <h2 className='uppercase font-vlack text-[#CCFF00]'>
+          <div className='flex flex-col text-center md:text-left'>
+            <h2 className='uppercase font-vlack text-[#CCFF00] text-lg md:text-2xl'>
               {project.name}
             </h2>
-            <p>{project.desc}</p>
+            <p className='text-sm md:text-base text-gray-300'>{project.desc}</p>
           </div>
         </div>
       ))}
